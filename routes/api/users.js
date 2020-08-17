@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../../models/User');
 const router = express.Router();
 const gravatar = require('gravatar');
-const bcrypt = require('bcrypt.js');
+const bcrypt = require('bcrypt');
 
 // @route    GET api/users/test
 // @desc     Tests users route
@@ -28,7 +28,7 @@ router.post('/register', (req, res) => {
           name: req.body.name,
           email: req.body.email,
           avatar,
-          password: req.body.password
+          password: hash,
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -40,8 +40,16 @@ router.post('/register', (req, res) => {
               .then(user => res.json(user))
               .catch(err => console.log(err));
           })
+          // bcrypt.compare(newUser.password, hash, (err, isMatch) => {
+          //   if (err) {
+          //     throw err
+          //   } else if (!isMatch) {
+          //     console.log("passwords don't match")
+          //   } else {
+          //     console.log("passwords match")
+          //   }
+          // });
         })
-
       }
     })
 })

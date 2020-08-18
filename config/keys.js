@@ -8,5 +8,6 @@ client.connect(err => {
 });
 
 module.exports = {
-  mongoURI: "mongodb+srv://admin:053zwkEGGYnGG3G4@cluster0.wxxjw.mongodb.net/myfriends?retryWrites=true&w=majority"
+  mongoURI: "mongodb+srv://admin:053zwkEGGYnGG3G4@cluster0.wxxjw.mongodb.net/myfriends?retryWrites=true&w=majority",
+  secret: 'secret'
 }

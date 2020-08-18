@@ -1,13 +1,15 @@
 const express = require('express');
-const User = require('../../models/User');
 const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys')
 const passport = require('passport');
-const { response } = require('express');
 
+
+
+// Load User model 
+const User = require('../../models/User');
 // @route    GET api/users/test
 // @desc     Tests users route
 // @access   Public

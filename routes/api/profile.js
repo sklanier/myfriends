@@ -74,7 +74,7 @@ router.get('/handle/:handle', (req, res) => {
 
 // @route   POST api/profile/user/:user_id
 // @desc    Get profile by User ID
-// @access  Public
+// @access  Public  
 
 router.get('/user/:user_id', (req, res) => {
   let errors = {};
